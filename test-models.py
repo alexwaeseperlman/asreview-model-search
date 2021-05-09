@@ -112,7 +112,7 @@ print('Running models')
 
 dataset = asreview.ASReviewData.from_file(args.filename)
 
-# Try run a simulation with every combination of the inputted options
+# Try a simulation with every combination of the inputted options
 for classifier_name, query_name, balance_name, feature_extraction_name, prior in itertools.product(args.classifiers, args.query, args.balance, args.feature_extraction, args.prior):
 
     args.seed += 1
