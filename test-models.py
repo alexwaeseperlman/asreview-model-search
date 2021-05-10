@@ -31,35 +31,36 @@ parser.add_argument('-o', '--output',
                     type=str)
 
 parser.add_argument('-c', '--classifiers',
-                    help='List of classifiers that will be tested. The accepted options are: ' + ', '.join(asreview.models.list_classifiers()), action='extend',
+                    help='List of classifiers that will be tested. The accepted options are: ' + ', '.join(asreview.models.list_classifiers()), 
+                    action='store',
                     default=asreview.models.list_classifiers(),
                     nargs='+',
                     type=str)
 
 parser.add_argument('-q', '--query',
                     help='List of query strategies that will be tested. The accepted options are: ' + ', '.join(asreview.models.query.list_query_strategies()), 
-                    action='extend',
+                    action='store',
                     default=asreview.models.query.list_query_strategies(),
                     nargs='+',
                     type=str)
 
 parser.add_argument('-b', '--balance',
                     help='List of balancing strategies that will be tested. The accepted options are: ' + ', '.join(asreview.models.balance.list_balance_strategies()),
-                    action='extend',
+                    action='store',
                     default=asreview.models.balance.list_balance_strategies(),
                     nargs='+',
                     type=str)
 
 parser.add_argument('-f', '--feature_extraction',
                     help='List of feature extraction models that will be tested. The accepted options are: ' + ', '.join(asreview.models.feature_extraction.list_feature_extraction()),
-                    action='extend',
+                    action='store',
                     default=asreview.models.feature_extraction.list_feature_extraction(),
                     nargs='+',
                     type=str)
 
 parser.add_argument('-p', '--prior',
                     help='List of the number of prelabelled papers to include formatted like: prior_included,prior_excluded. For example the input could look like --prior 1,1 5,5 5,10',
-                    action='extend',
+                    action='store',
                     default=['1,1', '5,5', '5,10'],
                     nargs='+',
                     type=str)
